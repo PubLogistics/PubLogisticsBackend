@@ -31,6 +31,12 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
+    "user.apps.UsersConfig",
+    "route.apps.RouteConfig",
+    "express.apps.ExpressConfig",
+    "company.apps.CompanyConfig",
+    "line.apps.LineConfig",
+    "station.apps.StationConfig",
     "django.contrib.admin",
     "django.contrib.auth",
     "django.contrib.contenttypes",
