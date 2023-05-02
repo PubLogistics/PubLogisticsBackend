@@ -15,8 +15,8 @@ class UserInfo(models.Model):
     )
     nickname=models.CharField(max_length=64,verbose_name="用户昵称")
     conductor=models.BooleanField(default=False,verbose_name="司乘权限")
-    company=models.ForeignKey(Company,on_delete=models.SET_NULL,blank=True,verbose_name="所在公司")
-    wage=models.DecimalField(default=0.0,max_digits=None,decimal_places=2,blank=True,verbose_name="钱")
+    company=models.ForeignKey(Company,on_delete=models.SET_NULL,null=True,blank=True,verbose_name="所在公司")
+    wage=models.DecimalField(default=0.0,max_digits=6,decimal_places=2,blank=True,verbose_name="钱")
 
 # @receiver(post_save, sender=User)
 # def create_user_profile(sender, instance, created, **kwargs):
