@@ -13,6 +13,7 @@ class UserInfo(models.Model):
         primary_key=True,
         verbose_name="用户",
     )
+    phone=models.CharField(max_length=13,verbose_name="电话号码",null=True,blank=True)
     nickname=models.CharField(max_length=64,verbose_name="用户昵称")
     conductor=models.BooleanField(default=False,verbose_name="司乘权限")
     company=models.ForeignKey(Company,on_delete=models.SET_NULL,null=True,blank=True,verbose_name="所在公司")
