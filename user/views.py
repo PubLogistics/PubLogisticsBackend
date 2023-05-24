@@ -9,7 +9,9 @@ from .models import UserInfo
 
 from .forms import RegisterForm,UserForm
 
-class Register(View):
+
+
+class UserOperation(View):
     #US0101 用户注册
     def post(self,request)->JsonResponse:
         body=demjson.decode(request.body)
@@ -32,8 +34,7 @@ class Register(View):
         #不知道如果是继承的话，是不是可以直接通过表单保存
         #如果使用的是onetoonefield可能不大行直接通过forms内的password保存？
         return JsonResponse({"msg":"注册成功","id":user.id},status=201)
-
-class Login(View):
+    
     #US0201 用户登录
     def get(self,request)->JsonResponse:
         body=demjson.decode(request.body)
